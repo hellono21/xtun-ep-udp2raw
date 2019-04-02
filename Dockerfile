@@ -6,7 +6,8 @@ RUN apk add --no-cache \
  && mv /usr/sbin/tcpdump /usr/bin/tcpdump \
  && ln -s /usr/bin/tcpdump /usr/sbin/tcpdump
 
-COPY rootfs /
+COPY rootfs.tar /
+RUN tar xf rootfs.tar -C /
 
 EXPOSE 443/tcp
 
